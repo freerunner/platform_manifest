@@ -4,16 +4,20 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/" />
   <remote name="pete"
-           fetch="git://github.com/peteralfonso/" /> 
+      fetch="git://github.com/peteralfonso/" /> 
+  <remote name="gh"
+      fetch="git://github.com/" />
+  <remote name="andy"
+      fetch="https://github.com/freerunner/" />
   <default revision="refs/tags/android-4.1.1_r1"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform_build" remote="pete" revision="jb">
+  <project path="build" name="platform_build" remote="andy" revision="hacks">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" />
-  <project path="bionic" name="platform/bionic" />
+  <project path="bionic" name="platform/bionic" remote="andy" revision="hacks" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
   <project path="bootable/recovery" name="platform/bootable/recovery" />
@@ -33,7 +37,7 @@
   <project path="device/sample" name="device/sample" />
   <project path="device/samsung/crespo" name="device/samsung/crespo" />
   <project path="device/samsung/crespo4g" name="device/samsung/crespo4g" />
-  <project path="device/samsung/maguro" name="platform_device_samsung_maguro" remote="pete" revision="jb" />
+  <project path="device/samsung/maguro" name="platform_device_samsung_maguro" remote="andy" revision="hacks" />
   <project path="device/samsung/toro" name="platform_device_samsung_toro" remote="pete" revision="jb" />
   <project path="device/samsung/torospr" name="device/samsung/torospr" />
   <project path="device/samsung/tuna" name="platform_device_samsung_tuna" remote="pete" revision="jb" />
@@ -53,6 +57,8 @@
   <project path="external/bluetooth/hcidump" name="platform/external/bluetooth/hcidump" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" />
   <project path="external/bsdiff" name="platform/external/bsdiff" />
+  <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="gh" revision=
+"jellybean" />
   <project path="external/bzip2" name="platform/external/bzip2" />
   <project path="external/checkpolicy" name="platform/external/checkpolicy" />
   <project path="external/chromium" name="platform/external/chromium" />
@@ -156,7 +162,7 @@
   <project path="external/replicaisland" name="platform/external/replicaisland" />
   <project path="external/safe-iop" name="platform/external/safe-iop" />
   <project path="external/sepolicy" name="platform/external/sepolicy" />
-  <project path="external/skia" name="platform/external/skia" />
+  <project path="external/skia" name="platform_external_skia" remote="andy" revision="hacks" />
   <project path="external/smali" name="platform/external/smali" />
   <project path="external/sonivox" name="platform/external/sonivox" />
   <project path="external/speex" name="platform/external/speex" />
@@ -181,10 +187,10 @@
   <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" />
   <project path="external/yaffs2" name="platform/external/yaffs2" />
-  <project path="external/zlib" name="platform/external/zlib" />
+  <project path="external/zlib" name="platform_external_zlib" remote="andy" revision="hacks" />
   <project path="external/zxing" name="platform/external/zxing" />
   <project path="frameworks/av" name="platform/frameworks/av" />
-  <project path="frameworks/base" name="platform_frameworks_base" remote="pete" revision="jb" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="andy" revision="hacks" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" />
@@ -220,6 +226,7 @@
   <project path="ndk" name="platform/ndk" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" />
+  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" remote="aosp" revision="master" />
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
   <project path="packages/apps/Camera" name="platform/packages/apps/Camera" />
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" />
@@ -291,12 +298,14 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" />
   <project path="sdk" name="platform/sdk" />
   <project path="system/bluetooth" name="platform/system/bluetooth" />
-  <project path="system/core" name="platform/system/core" />
-  <project path="system/extras" name="platform/system/extras" />
+  <project path="system/core" name="platform_system_core" remote="andy" revision="hacks" />
+  <project path="system/extras" name="platform_system_extras" remote="andy" revision="hacks"/>
   <project path="system/media" name="platform/system/media" />
   <project path="system/netd" name="platform/system/netd" />
   <project path="system/security" name="platform/system/security" />
+  <project path="system/su" name="ChainsDD/su-binary" remote="gh" revision="master" />
   <project path="system/vold" name="platform/system/vold" />
-  <project path="vendor/samsung" name="platform_vendor_samsung" remote="pete" revision="jb" />
+  <project path="vendor/primerunner" name="platform_vendor_primerunner" remote="andy" revision="master" />
+  <project path="vendor/samsung" name="platform_vendor_samsung" remote="andy" revision="hacks" />
 
 </manifest>
